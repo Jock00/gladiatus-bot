@@ -65,23 +65,17 @@ async def attack_npc(ctx, location=5, stage=2):
 
 @bot.command(name='attack_npc_loop')
 async def attack_npc_loop(ctx):
-    response = "NPC attack loop process started."
+    response = "NPC attack loop process started. "
     await ctx.send(response)
+    commands = [
+        "cd /home/ubuntu/gladiatus-bot/scripts",
+        "sh npc_attack.sh"
+        ]
 
-    # Define paths
-    base_path = os.path.dirname(os.path.abspath(__file__))
-    script_dir = os.path.join(base_path, '../scripts')
-    log_file = os.path.join(base_path, '../logs/npc.log')
-
-    # Create the full cron command
-    command = f"cd {script_dir} && sh npc_attack.sh >> {log_file} 2>&1"
-
-    # Initialize CronTab and create the job
-    cron = CronTab(user=True)
-    job = cron.new(command=command, comment='NPC attack loop')
+    job=cron.new(command= (" && ").join(commands) + " >> ../logs/npc.log 2>&1")
     job.minute.every(1)
-    cron.write()
 
+    cron.write()
     await ctx.send("Done")
 
 
