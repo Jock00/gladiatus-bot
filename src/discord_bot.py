@@ -30,11 +30,11 @@ async def attack_loop(ctx):
     response = "Player looping attack process started. "
     await ctx.send(response)
     commands = [
-        "cd /home/ubuntu/test/glad/src",
-        "python3 player_arena_attack.py"
+        "cd ../scripts",
+        "sh player.sh"
         ]
 
-    job=cron.new(command= (" && ").join(commands) + " >> players.log 2>&1") 
+    job=cron.new(command= (" && ").join(commands) + " >> ../logs/players.log 2>&1")
     job.minute.every(1) 
    
     cron.write()
@@ -59,7 +59,6 @@ async def attack_npc(ctx, location=5, stage=2):
     response = "NPC attack process started. "
     await ctx.send(response)
     attack = npc_attack()
-    print(location, stage)
     response = attack.attack_npcs(location, stage)
     await ctx.send(response)
 
@@ -68,11 +67,11 @@ async def attack_npc_loop(ctx):
     response = "NPC attack loop process started. "
     await ctx.send(response)
     commands = [
-        "cd /home/ubuntu/test/glad/src",
-        "python3 npc_attack.py"
+        "cd ../scripts",
+        "sh npc_attack.sh"
         ]
 
-    job=cron.new(command= (" && ").join(commands) + " >> npc.log 2>&1") 
+    job=cron.new(command= (" && ").join(commands) + " >> ../logs/npc.log 2>&1")
     job.minute.every(1) 
    
     cron.write()
@@ -89,6 +88,7 @@ async def remove_loop_attack(ctx):
 @bot.command(name='attack_dungeon')
 async def attack_dungeon(ctx, location):
     response = "Dungeon attack process started. "
+    type_dungeon = "Advanced"
     await ctx.send(response)
     dungeon_attack = DungeonAttack(location)
     try:
@@ -104,11 +104,11 @@ async def attack_dungeon_loop(ctx):
     response = "Dungeon loop attack process started. "
     await ctx.send(response)
     commands = [
-        "cd /home/ubuntu/test/glad/src",
-        "python3 dungeon_attack.py"
+        "cd ../scripts",
+        "sh dungeon_attack.sh"
         ]
 
-    job=cron.new(command= (" && ").join(commands) + " >> dungeon.log 2>&1") 
+    job=cron.new(command= (" && ").join(commands) + " >> ../logs/dungeon.log 2>&1")
     job.minute.every(1) 
    
     cron.write()
@@ -146,11 +146,11 @@ async def start_loop_auction(ctx, time = "very short"):
     response = "Auction with {time} started. Looping .."
     await ctx.send(response)
     commands = [
-        "cd /home/ubuntu/test/glad/src",
-        "python3 auction.py"
+        "cd ../scripts",
+        "sh auction.sh"
         ]
 
-    job=cron.new(command= (" && ").join(commands) + " >> auction.log 2>&1") 
+    job=cron.new(command= (" && ").join(commands) + " >> ../logs/auction.log 2>&1")
     job.minute.every(1) 
    
     cron.write()
