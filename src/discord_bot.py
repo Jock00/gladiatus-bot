@@ -52,7 +52,7 @@ async def remove_loop_attack(ctx):
 
 @bot.command(name='get_cron')
 async def get_crons(ctx):
-    for i in cron:  
+    for i in cron:
         await ctx.send(i)
 
 @bot.command(name='attack_npc')
@@ -67,12 +67,8 @@ async def attack_npc(ctx, location=5, stage=2):
 async def attack_npc_loop(ctx):
     response = "NPC attack loop process started. "
     await ctx.send(response)
-    commands = [
-        "cd /home/ubuntu/gladiatus-bot/scripts",
-        "sh npc_attack.sh"
-        ]
-
-    job=cron.new(command= (" && ").join(commands) + " >> ../logs/npc.log 2>&1")
+    command = "sh ../scripts/npc.sh >> ../logs/npc.log 2>&1"
+    job=cron.new(command= command)
     job.minute.every(1)
 
     cron.write()
