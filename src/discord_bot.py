@@ -63,38 +63,26 @@ async def attack_npc(ctx, location=5, stage=2):
     response = attack.attack_npcs(location, stage)
     await ctx.send(response)
 
-import os
-from crontab import CronTab
-
 @bot.command(name='attack_npc_loop')
 async def attack_npc_loop(ctx):
     response = "NPC attack loop process started."
     await ctx.send(response)
 
-    # Get the directory where this script is located
+    # Define paths
     base_path = os.path.dirname(os.path.abspath(__file__))
+    script_dir = os.path.join(base_path, '../scripts')
+    log_file = os.path.join(base_path, '../logs/npc.log')
 
-    # Define the paths
-    script_path = os.path.join(base_path, '../scripts/npc_attack.sh')
-    log_path = os.path.join(base_path, '../logs/npc.log')
+    # Create the full cron command
+    command = f"cd {script_dir} && sh npc_attack.sh >> {log_file} 2>&1"
 
-    # Construct the full command
-    full_command = f"cd {os.path.join(base_path, '../scripts')} && sh npc_attack.sh >> {log_path} 2>&1"
-
-    # Initialize the CronTab object for the current user
+    # Initialize CronTab and create the job
     cron = CronTab(user=True)
-
-    # Create the new cron job
-    job = cron.new(command=full_command, comment='NPC attack loop')
-
-    # Set the cron job to run every minute
+    job = cron.new(command=command, comment='NPC attack loop')
     job.minute.every(1)
-
-    # Write the cron job to the crontab
     cron.write()
 
     await ctx.send("Done")
-
 
 
 @bot.command(name='attack_loop_npc_remove')
