@@ -68,7 +68,6 @@ class Stats(Settings):
         return result
     
     def get_health(self):
-        print(self.cookies)
         health_data = self.data.xpath("//*[@id='header_values_hp_bar']/@data-tooltip")[0]
         health = int(health_data.split('"')[3].split()[0])
         return health
