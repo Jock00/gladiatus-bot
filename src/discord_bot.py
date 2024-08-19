@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 import os
 guild_id = "1250688599318335610"
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_TOKEN = os.getenv("BOT_TOKEN_DISCORD")
 
 
 intents = discord.Intents.default()
