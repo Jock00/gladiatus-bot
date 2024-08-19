@@ -396,7 +396,7 @@ if __name__ == "__main__":
 
     pkk.store_materials()
     pkk.fill_inventory(inventory_ids)
-    pkk.sell_items_from_inventory(inventory_ids)
+
 
 
 
