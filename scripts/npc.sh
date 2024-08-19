@@ -4,4 +4,4 @@
 cd ../src
 
 # Run the Python script
-python3 player_arena_attack.py
+python npc_attack.py
