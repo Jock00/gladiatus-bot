@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 import os
 guild_id = "1250688599318335610"
 
+load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN_DISCORD")
 
 

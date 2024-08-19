@@ -1,10 +1,13 @@
 import requests
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
-# Replace 'YOUR_BOT_TOKEN' with the token you got from BotFather
-BOT_TOKEN = '7290063693:AAH18br8EGmdjScereqPCOSmzRFWr6wQVVw'
+BOT_TOKEN_TELEGRAM = os.getenv("BOT_TOKEN_TELEGRAM")
+
 
 # The URL to get updates
-url = f'https://api.telegram.org/bot{BOT_TOKEN}/getUpdates'
+url = f'https://api.telegram.org/bot{BOT_TOKEN_TELEGRAM}/getUpdates'
 
 # Sending the request to get updates
 response = requests.get(url)
