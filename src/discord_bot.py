@@ -13,7 +13,6 @@ guild_id = "1250688599318335610"
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN_DISCORD")
 
-
 intents = discord.Intents.default()
 intents.message_content = True 
 
@@ -64,20 +63,38 @@ async def attack_npc(ctx, location=5, stage=2):
     response = attack.attack_npcs(location, stage)
     await ctx.send(response)
 
+import os
+from crontab import CronTab
+
 @bot.command(name='attack_npc_loop')
 async def attack_npc_loop(ctx):
-    response = "NPC attack loop process started. "
+    response = "NPC attack loop process started."
     await ctx.send(response)
-    commands = [
-        "cd ../scripts",
-        "sh npc_attack.sh"
-        ]
 
-    job=cron.new(command= (" && ").join(commands) + " >> ../logs/npc.log 2>&1")
-    job.minute.every(1) 
-   
+    # Get the directory where this script is located
+    base_path = os.path.dirname(os.path.abspath(__file__))
+
+    # Define the paths
+    script_path = os.path.join(base_path, '../scripts/npc_attack.sh')
+    log_path = os.path.join(base_path, '../logs/npc.log')
+
+    # Construct the full command
+    full_command = f"cd {os.path.join(base_path, '../scripts')} && sh npc_attack.sh >> {log_path} 2>&1"
+
+    # Initialize the CronTab object for the current user
+    cron = CronTab(user=True)
+
+    # Create the new cron job
+    job = cron.new(command=full_command, comment='NPC attack loop')
+
+    # Set the cron job to run every minute
+    job.minute.every(1)
+
+    # Write the cron job to the crontab
     cron.write()
+
     await ctx.send("Done")
+
 
 
 @bot.command(name='attack_loop_npc_remove')
