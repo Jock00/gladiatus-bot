@@ -245,6 +245,17 @@ class Package(Settings):
             for j in range(y_start, y_start + len_y):
                 matrix[i][j] = value
 
+    def get_unique_items_id(self, matrix):
+        ids = []
+        for line in range(self.inventory_lines):
+            for column in range(self.inventory_columns):
+                elem = int(matrix[line][column])
+                if elem == 0:
+                    continue
+                if elem not in ids:
+                    ids.append(elem)
+        return ids
+
     def move_items_to_inventory(self, inventory_id='513', package_page=1):
         # moves items from packages to inventory
         data = self.get_package_page(inventory_id, package_page)
@@ -279,8 +290,8 @@ class Package(Settings):
                         data='&sh=' + self.sh,
                     )
                     if "error" in pp.text:
-                        print(self.params)
-                        print(pp.text)
+                        print(f"Could not move object - {self.map_name[p_id]}! Data: {json.dumps(self.params, indent=4)}")
+
                     else:
                         moved_items += 1
                         print(f"{p_id} moved!")
@@ -347,52 +358,33 @@ class Package(Settings):
             return 1
         return 0
 
-    def smelt_item(self, item_id, slot):
-        params = {
-            'mod': 'forge',
-            'submod': 'rent',
-        }
-        data = {
-            'mod': 'forge',
-            'submod': 'rent',
-            'mode': 'smelting',
-            'slot': f'{slot}',
-            'rent': '2',
-            'item': f'{item_id}',
-            'sh': self.sh,
-        }
-        response = requests.post(
-            self.post_url,
-            params=params,
-            cookies=self.cookies,
-            headers=self.headers,
-            data=data,
-        )
-        if "Not possible" in response.text:
-            return 0
-        return 1
+    def fill_inventory(self, inventory_ids_arg):
+        for inventory_id in inventory_ids_arg:
+            page = 1
+            while True:
+                inventory = self.get_inventory(inventory_id)
+                self.move_items_to_inventory(inventory_id, page)
+                if self.check_matrix_has_space(inventory):
+                    page += 1
+                else:
+                    break
 
-    def get_resource_smelt(self, slot):
-        params = {
-            'mod': 'forge',
-            'submod': 'storeSmelted',
-        }
+    def sell_items_from_inventory(self, inventory_ids_arg):
+        total_gold = 0
+        while True:
+            actual_gold = 0
+            for inventory_id in inventory_ids_arg:
+                print(f"inventory_id = {inventory_id}")
+                for seller in sellers:
+                    print(f"\tSeller = {Package.print_seller(seller - 1)}")
+                    actual_gold += self.sell_items(inventory_id, seller)
+            if not actual_gold:
+                print("no more space available")
+                break
+            else:
+                total_gold += actual_gold
+        print(f"Made {total_gold} gold. GG!")
 
-        data = {
-            'mod': 'forge',
-            'submod': 'storeSmelted',
-            'mode': 'smelting',
-            'slot': f'{slot}',
-            'sh': self.sh,
-        }
-        response = requests.post(
-            self.post_url,
-            params=params,
-            cookies=self.cookies,
-            headers=self.headers,
-            data=data,
-        )
-        print(response.text)
 
 if __name__ == "__main__":
     pkk = Package()
@@ -402,38 +394,9 @@ if __name__ == "__main__":
 
     # pkk.get_new_goods()
 
-    # pkk.store_materials()
+    pkk.store_materials()
+    pkk.fill_inventory(inventory_ids)
+    pkk.sell_items_from_inventory(inventory_ids)
 
-    # print(pkk.get_inventory(inventory_ids[1])
-    # print(pkk.get_inventory(inventory_ids[0]))
 
-    id_elem = 9952703
-    slot_no = 4
-    # smelt_item = pkk.smelt_item(id_elem, slot_no)
-    pkk.get_resource_smelt(slot_no)
 
-    # for inventory_id in inventory_ids:
-    #     page = 1
-    #     while True:
-    #         inventory = pkk.get_inventory(inventory_id)
-    #         pkk.move_items_to_inventory(inventory_id, page)
-    #         if pkk.check_matrix_has_space(inventory):
-    #             page+=1
-    #         else:
-    #             break
-    # total_gold = 0
-    # actual_gold = 0
-    # while True:
-    #     actual_gold = 0
-    #     for inventory_id in inventory_ids:
-    #         print(f"inventory_id = {inventory_id}")
-    #         for seller in sellers:
-    #             print(f"\tSeller = {Package.print_seller(seller - 1)}")
-    #             actual_gold += pkk.sell_items(inventory_id, seller)
-    #     if not actual_gold:
-    #         print("no more space available")
-    #         break
-    #     else:
-    #         # print(f"Made {total_gold} gold. GG")
-    #         total_gold += actual_gold
-    # print(f"Made {total_gold} gold. GG!")
