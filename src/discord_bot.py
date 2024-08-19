@@ -6,10 +6,11 @@ from stats import Stats
 from player_arena_attack import PlayerAttack
 from auction import Auction
 from crontab import CronTab 
-
+from dotenv import load_dotenv
+import os
 guild_id = "1250688599318335610"
 
-BOT_TOKEN = 'MTI1MDY4NzE3MDU4NzY2MDM1OQ.GmrPao.zIz4ZvPtDBo69bIIpcKDKAd72izOOwHhhSFAGc'
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 
 intents = discord.Intents.default()
@@ -165,6 +166,3 @@ async def stop_loop_auction(ctx):
     cron.write()
 
 bot.run(BOT_TOKEN)
-
-
-
