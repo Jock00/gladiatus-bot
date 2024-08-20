@@ -8,6 +8,7 @@ from auction import Auction
 from crontab import CronTab 
 from dotenv import load_dotenv
 import os
+from package import Package
 guild_id = "1250688599318335610"
 
 load_dotenv()
@@ -30,12 +31,11 @@ async def attack(ctx):
 async def attack_loop(ctx):
     response = "Player looping attack process started. "
     await ctx.send(response)
-    commands = [
-        "cd ../scripts",
-        "sh player.sh"
-        ]
 
-    job=cron.new(command= (" && ").join(commands) + " >> ../logs/players.log 2>&1")
+    command = ("cd /home/ubuntu/gladiatus-bot/src/ && "
+               "/home/ubuntu/gladiatus-bot/venv/bin/python3 /home/ubuntu/gladiatus-bot/src/player_arena_attack.py "
+               ">> /home/ubuntu/gladiatus-bot/logs/player.log 2>&1")
+    job = cron.new(command)
     job.minute.every(1) 
    
     cron.write()
@@ -67,8 +67,10 @@ async def attack_npc(ctx, location=5, stage=2):
 async def attack_npc_loop(ctx):
     response = "NPC attack loop process started. "
     await ctx.send(response)
-    command = "sh ../scripts/npc.sh >> ../logs/npc.log 2>&1"
-    job=cron.new(command= command)
+    command = ("cd /home/ubuntu/gladiatus-bot/src/ && "
+               "/home/ubuntu/gladiatus-bot/venv/bin/python3 /home/ubuntu/gladiatus-bot/src/npc_attack.py "
+               ">> /home/ubuntu/gladiatus-bot/logs/npc.log 2>&1")
+    job = cron.new(command)
     job.minute.every(1)
 
     cron.write()
@@ -142,12 +144,10 @@ async def auction(ctx, *, time: str = 'very short'):
 async def start_loop_auction(ctx, time = "very short"):
     response = "Auction with {time} started. Looping .."
     await ctx.send(response)
-    commands = [
-        "cd ../scripts",
-        "sh auction.sh"
-        ]
-
-    job=cron.new(command= (" && ").join(commands) + " >> ../logs/auction.log 2>&1")
+    command = ("cd /home/ubuntu/gladiatus-bot/src/ && "
+               "/home/ubuntu/gladiatus-bot/venv/bin/python3 /home/ubuntu/gladiatus-bot/src/auction.py "
+               ">> /home/ubuntu/gladiatus-bot/logs/auction.log 2>&1")
+    job = cron.new(command)
     job.minute.every(1) 
    
     cron.write()
@@ -160,5 +160,37 @@ async def stop_loop_auction(ctx):
         print(f"{delete_cron} removed!")
         cron.remove(delete_cron)
     cron.write()
+
+# package
+@bot.command(name='inventory_fill')
+async def start_loop_auction(ctx, time="very short"):
+    response = "Filling inventory"
+    await ctx.send(response)
+    command = ("cd /home/ubuntu/gladiatus-bot/src/ && "
+               "/home/ubuntu/gladiatus-bot/venv/bin/python3 /home/ubuntu/gladiatus-bot/src/package.py "
+               ">> /home/ubuntu/gladiatus-bot/logs/package.log 2>&1")
+    job = cron.new(command)
+    job.hour.every(12)
+
+    cron.write()
+    await ctx.send("Done! Set to every 12h")
+
+
+@bot.command(name='inventory_fill_stop')
+async def stop_loop_auction(ctx):
+    to_be_deleted = [crn for crn in cron if "inventory" in crn.command]
+    for delete_cron in to_be_deleted:
+        print(f"{delete_cron} removed!")
+        cron.remove(delete_cron)
+    cron.write()
+# only once
+@bot.command(name='incentory_fill_once')
+async def heal(ctx):
+    response = "Filling inventory process started. "
+    await ctx.send(response)
+    pkk = Package()
+    pkk.fill_inventory(["1", "2"])
+
+    await ctx.send("Filled!")
 
 bot.run(BOT_TOKEN)
