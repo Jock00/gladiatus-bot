@@ -86,7 +86,7 @@ reps = d.get_highest_rewards()
 for i in reps:
     # print(json.dumps(i, indent=4))
     db.insert_player(i)
-res = db.query_players()
-for j in res:
-    print(json.dumps(j, indent=4))
+# res = db.query_players()
+# for j in res:
+#     print(json.dumps(j, indent=4))
 db.close()
