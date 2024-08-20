@@ -287,9 +287,20 @@ async def inventory_smelt_once(ctx):
     await ctx.send("Smelted!")
 
 # report
-@bot.command(name='report')
+@bot.command(name='report_once')
 async def report(ctx):
-    response = "Selling inventory process started. "
+    response = "Gathering data from attacks.. "
+    await ctx.send(response)
+    command = ("cd /home/ubuntu/gladiatus-bot/src/ && "
+               "/home/ubuntu/gladiatus-bot/venv/bin/python3 /home/ubuntu/gladiatus-bot/src/battle_report.py "
+               ">> /home/ubuntu/gladiatus-bot/logs/battle.log 2>&1")
+    job = cron.new(command)
+    job.setall('0 9 * * *')
+    await ctx.send("Report will be available each day at 9:00.")
+
+@bot.command(name='report_once')
+async def report_once(ctx):
+    response = "Gathering data from attacks.. "
     await ctx.send(response)
     d = BattleReport()
     db = GladiatusDB("players")
@@ -304,5 +315,5 @@ async def report(ctx):
     #     print(json.dumps(j, indent=4))
     db.close()
     await ctx.send("Report done! Check database.")
-    
+
 bot.run(BOT_TOKEN)
