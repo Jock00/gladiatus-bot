@@ -90,7 +90,7 @@ async def attack_npc_loop(ctx):
     await ctx.send("Done")
 
 
-@bot.command(name='attack_loop_npc_remove')
+@bot.command(name='attack_npc_loop_remove')
 async def remove_loop_attack(ctx):
     to_be_deleted = [crn for crn in cron if "npc_attack" in crn.command]
     for delete_cron in to_be_deleted:
