@@ -163,7 +163,7 @@ async def stop_loop_auction(ctx):
 
 # package
 @bot.command(name='inventory_fill')
-async def start_loop_auction(ctx, time="very short"):
+async def inventory_fill(ctx):
     response = "Filling inventory"
     await ctx.send(response)
     command = ("cd /home/ubuntu/gladiatus-bot/src/ && "
@@ -177,18 +177,20 @@ async def start_loop_auction(ctx, time="very short"):
 
 
 @bot.command(name='inventory_fill_stop')
-async def stop_loop_auction(ctx):
+async def inventory_fill_stop(ctx):
     to_be_deleted = [crn for crn in cron if "inventory" in crn.command]
     for delete_cron in to_be_deleted:
         print(f"{delete_cron} removed!")
         cron.remove(delete_cron)
     cron.write()
+    
 # only once
 @bot.command(name='incentory_fill_once')
-async def heal(ctx):
+async def incentory_fill_once(ctx):
     response = "Filling inventory process started. "
     await ctx.send(response)
     pkk = Package()
+    pkk.store_materials()
     pkk.fill_inventory(["1", "2"])
 
     await ctx.send("Filled!")
