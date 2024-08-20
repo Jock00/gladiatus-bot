@@ -287,7 +287,7 @@ async def inventory_smelt_once(ctx):
     await ctx.send("Smelted!")
 
 # report
-@bot.command(name='report_once')
+@bot.command(name='report')
 async def report(ctx):
     response = "Gathering data from attacks.. "
     await ctx.send(response)
