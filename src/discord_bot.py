@@ -101,11 +101,12 @@ async def attack_dungeon_loop(ctx):
     response = "Dungeon loop attack process started. "
     await ctx.send(response)
     commands = [
-        "cd ../scripts",
-        "sh dungeon_attack.sh"
-        ]
-
-    job=cron.new(command= (" && ").join(commands) + " >> ../logs/dungeon.log 2>&1")
+        "cd gladiatus-bot/",
+        "source venv/bin/activate",
+        "cd src/",
+        "python3 dungeon_attack.py"
+    ]
+    job = cron.new(command=(" && ").join(commands) + " >> gladiatus/logs/dungeon.log 2>&1")
     job.minute.every(1) 
    
     cron.write()
