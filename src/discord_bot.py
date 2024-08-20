@@ -53,11 +53,20 @@ async def remove_loop_attack(ctx):
 @bot.command(name='get_cron')
 async def get_crons(ctx):
     for i in cron:
-        data = i.split(" ")
-        time = [tm.strip() for tm in data if "*" in tm]
-        script = [sc.split("/")[-1] for sc in data if "py" in sc]
-        output = [opt.split("/")[-1] for opt in data if ".log" in data]
-        await ctx.send(" ".join(time + script + output))
+        data = str(i)
+        if "gladiatus-bot" not in data:
+            continue
+        try:
+            first_part, second_part = data.split(">>")
+        except ValueError:
+            continue
+        else:
+            time = first_part.split("cd")[0].strip()
+            script = first_part.split("/")[-1]
+            output = second_part.split()[0].strip().split("/")[-1]
+            # print(time + " " + script + " "+ output)
+            message = f"Script {script} is running {time} and output is {output}"
+        await ctx.send(message)
 
 @bot.command(name='attack_npc')
 async def attack_npc(ctx, location=5, stage=2):
