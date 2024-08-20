@@ -53,7 +53,11 @@ async def remove_loop_attack(ctx):
 @bot.command(name='get_cron')
 async def get_crons(ctx):
     for i in cron:
-        await ctx.send(i)
+        data = i.split(" ")
+        time = [tm.strip() for tm in data if "*" in tm]
+        script = [sc.split("/")[-1] for sc in data if "py" in sc]
+        output = [opt.split("/")[-1] for opt in data if ".log" in data]
+        await ctx.send(" ".join(time + script + output))
 
 @bot.command(name='attack_npc')
 async def attack_npc(ctx, location=5, stage=2):
@@ -183,7 +187,7 @@ async def inventory_fill_stop(ctx):
         print(f"{delete_cron} removed!")
         cron.remove(delete_cron)
     cron.write()
-    
+
 # only once
 @bot.command(name='incentory_fill_once')
 async def incentory_fill_once(ctx):
