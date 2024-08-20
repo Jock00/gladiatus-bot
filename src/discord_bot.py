@@ -103,7 +103,7 @@ async def attack_dungeon_loop(ctx):
 
     command = ("cd /home/ubuntu/gladiatus-bot/src/ && "
                "/home/ubuntu/gladiatus-bot/venv/bin/python3 /home/ubuntu/gladiatus-bot/src/dungeon_attack.py "
-               ">> /home/ubuntu/gladiatus-bot/dungeon.log 2>&1")
+               ">> /home/ubuntu/gladiatus-bot/logs/dungeon.log 2>&1")
 
     job = cron.new(command=command)
     job.minute.every(1) 
