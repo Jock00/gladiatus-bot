@@ -237,11 +237,12 @@ async def inventory_sell_stop(ctx):
 
 # only once
 @bot.command(name='inventory_sell_once')
-async def inventory_fill_once(ctx):
+async def inventory_sell_once(ctx):
     response = "Selling inventory process started. "
     await ctx.send(response)
     pkk = Package()
     inventory_ids = ["1", "2"]
+    print("sell now ..")
     pkk.sell_items_from_inventory(inventory_ids)
 
     await ctx.send("Sold!")

@@ -371,6 +371,7 @@ class Package(Settings):
 
     def sell_items_from_inventory(self, inventory_ids_arg):
         total_gold = 0
+        sellers = [1, 2, 3, 4, 5, 6]
         while True:
             actual_gold = 0
             for inventory_id in inventory_ids_arg:
@@ -390,7 +391,6 @@ if __name__ == "__main__":
     pkk = Package()
 
     inventory_ids = ["1", "2"]
-    sellers = [1, 2, 3, 4, 5, 6]  # seller inventory
 
     # pkk.get_new_goods()
 
