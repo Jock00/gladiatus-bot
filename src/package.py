@@ -54,7 +54,10 @@ class Package(Settings):
             self.package_url += '&f=7'
         req = requests.get(self.package_url, cookies=self.cookies)
         data = fromstring(req.text)
-        last_page = data.xpath("//*[@class='paging']//a/text()")[-1]
+        try:
+            last_page = data.xpath("//*[@class='paging']//a/text()")[-1]
+        except IndexError:
+            return None
         if page > int(last_page):
             return None
         return fromstring(req.text)
