@@ -293,7 +293,8 @@ async def report(ctx):
     response = "Gathering data from attacks.. "
     await ctx.send(response)
     command = ("cd /home/ubuntu/gladiatus-bot/src/ && "
-               "/home/ubuntu/gladiatus-bot/venv/bin/python3 /home/ubuntu/gladiatus-bot/src/battle_report.py "
+               "/home/ubuntu/gladiatus-bot/venv/bin/python3 "
+               "/home/ubuntu/gladiatus-bot/src/battle_raport.py "
                ">> /home/ubuntu/gladiatus-bot/logs/battle.log 2>&1")
     job = cron.new(command)
     job.setall('0 9 * * *')
