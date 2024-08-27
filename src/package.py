@@ -58,6 +58,7 @@ class Package(Settings):
             last_page = data.xpath("//*[@class='paging']//a/text()")[-1]
         except IndexError:
             return None
+
         if page > int(last_page):
             return None
         return fromstring(req.text)
@@ -263,13 +264,15 @@ class Package(Settings):
         # moves items from packages to inventory
         data = self.get_package_page(inventory_id, package_page)
         if data is None:
-            return 0
+            return -1
         inventory = self.get_inventory(inventory_id)
         raw_data = data.xpath('//*[@class="packageItem"]')
+
         self.params['to'] = str(512 + int(inventory_id))
         send_req = 1
         moved_items = 0
         for d in raw_data:
+
             len_y = d.xpath(".//@data-measurement-x")[0]
             len_x = d.xpath(".//@data-measurement-y")[0]
             p_id = d.xpath(".//@data-container-number")[0]
@@ -366,7 +369,9 @@ class Package(Settings):
             page = 1
             while True:
                 inventory = self.get_inventory(inventory_id)
-                self.move_items_to_inventory(inventory_id, page)
+                res = self.move_items_to_inventory(inventory_id, page)
+                if res < 0:
+                    break
                 if self.check_matrix_has_space(inventory):
                     page += 1
                 else:
