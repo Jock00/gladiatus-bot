@@ -79,7 +79,7 @@ class npc_attack(Settings):
 if __name__ == "__main__":
 
     location = 7
-    stage = 2
+    stage = 3
     
     npc_attack = npc_attack()
     print(npc_attack.attack_npcs(location, stage))
