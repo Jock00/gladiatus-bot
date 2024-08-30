@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 import os
 from package import Package
 from smelting import Smelt
-from battle_raport import BattleReport
+# from battle_raport import BattleReport
 from database import GladiatusDB
 
 guild_id = "1250688599318335610"
