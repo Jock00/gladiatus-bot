@@ -300,22 +300,22 @@ async def report(ctx):
     job.setall('0 9 * * *')
     await ctx.send("Report will be available each day at 9:00.")
 
-@bot.command(name='report_once')
-async def report_once(ctx):
-    response = "Gathering data from attacks.. "
-    await ctx.send(response)
-    d = BattleReport()
-    db = GladiatusDB("players")
-
-    db.create_table()
-    reps = d.get_highest_rewards()
-    for i in reps:
-        # print(json.dumps(i, indent=4))
-        db.insert_player(i)
-    # res = db.query_players()
-    # for j in res:
-    #     print(json.dumps(j, indent=4))
-    db.close()
-    await ctx.send("Report done! Check database.")
+# @bot.command(name='report_once')
+# async def report_once(ctx):
+#     response = "Gathering data from attacks.. "
+#     await ctx.send(response)
+#     d = BattleReport()
+#     db = GladiatusDB("players")
+#
+#     db.create_table()
+#     reps = d.get_highest_rewards()
+#     for i in reps:
+#         # print(json.dumps(i, indent=4))
+#         db.insert_player(i)
+#     # res = db.query_players()
+#     # for j in res:
+#     #     print(json.dumps(j, indent=4))
+#     db.close()
+#     await ctx.send("Report done! Check database.")
 
 bot.run(BOT_TOKEN)
