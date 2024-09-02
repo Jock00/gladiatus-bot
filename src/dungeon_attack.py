@@ -92,7 +92,7 @@ class DungeonAttack(Settings):
         )
     
 if __name__ == "__main__":
-    location = 1
+    location = 3
     type_dungeon = 'Advanced'
     dungeon_attack = DungeonAttack(location)
     try:
