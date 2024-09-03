@@ -256,7 +256,7 @@ async def inventory_smelt(ctx):
                "/home/ubuntu/gladiatus-bot/venv/bin/python3 /home/ubuntu/gladiatus-bot/src/smelting.py "
                ">> /home/ubuntu/gladiatus-bot/logs/sell.log 2>&1")
     job = cron.new(command)
-    job.hour.every(4)
+    job.hour.every(2)
 
     cron.write()
     await ctx.send("Done! Every 4 hours.")
