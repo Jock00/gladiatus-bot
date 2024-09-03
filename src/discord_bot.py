@@ -259,7 +259,7 @@ async def inventory_smelt(ctx):
     job.hour.every(2)
 
     cron.write()
-    await ctx.send("Done! Every 4 hours.")
+    await ctx.send("Done! Every 2 hours.")
 
 
 @bot.command(name='inventory_smelt_stop')

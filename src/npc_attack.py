@@ -6,6 +6,7 @@ from datetime import datetime
 from settings import Settings
 from urllib.parse import urlencode, urlparse
 from package import Package
+from crontab import CronTab
 
 locations = {
     "Germany": {0: {"name":"Cave Temple", "npc": ["Cave Temple"]},
@@ -31,8 +32,7 @@ class npc_attack(Settings):
     def set_stage(self, location, stage):
         self.params["location"] = location
         self.params["stage"] = stage
-        
-    
+
     def attack_npcs(self, location, stage):
         
         health = self.stats.get_health()
@@ -52,11 +52,45 @@ class npc_attack(Settings):
             
             r = requests.get(url, cookies=self.cookies)
             if '#errorText' in r.text:
+                # get no of attacks
+                points = self.stats.get_exp_points()
+                if points == 0:
+                    cron = CronTab(True)
+                    # delete the 1 one
+                    to_be_deleted = [crn for crn in cron if
+                                     "npc_attack" in crn.command]
+                    for delete_cron in to_be_deleted:
+                        cron.remove(delete_cron)
+
+                    # add at 4hr
+
+                    command = ("cd /home/ubuntu/gladiatus-bot/src/ && "
+                               "/home/ubuntu/gladiatus-bot/venv/bin/python3 /home/ubuntu/gladiatus-bot/src/npc_attack.py "
+                               ">> /home/ubuntu/gladiatus-bot/logs/npc.log 2>&1")
+                    job = cron.new(command)
+                    job.hour.every(4)
+                    cron.write()
                 return "You either have to wait or you don't have enough points"
             elif 'needLogin' in r.text:
                 return "You need to log in"
             else:
-                
+                points = self.stats.get_exp_points()
+                if points == 36:
+                    cron = CronTab(True)
+                    # delete the 1 one
+                    to_be_deleted = [crn for crn in cron if
+                                     "npc_attack" in crn.command]
+                    for delete_cron in to_be_deleted:
+                        cron.remove(delete_cron)
+
+                    # add at 4hr
+
+                    command = ("cd /home/ubuntu/gladiatus-bot/src/ && "
+                               "/home/ubuntu/gladiatus-bot/venv/bin/python3 /home/ubuntu/gladiatus-bot/src/npc_attack.py "
+                               ">> /home/ubuntu/gladiatus-bot/logs/npc.log 2>&1")
+                    job = cron.new(command)
+                    job.minute.every(1)
+                    cron.write()
                 return "Expediton attacked!"
         else:
             

@@ -26,7 +26,13 @@ class Stats(Settings):
         r = requests.get(self.profile_url, cookies=self.cookies)
         self.data = fromstring(r.text)
         return self.data
-    
+
+    def get_exp_points(self):
+        no = self.data.xpath(
+            "//*[@id='expeditionpoints_value_point']//text()"
+        )[0]
+        return int(no)
+
     def get_abilities(self, data=None):
         data = data if data is not None else self.data
         abilities = data.xpath("//*[@class='charstats_bg']//text()")
