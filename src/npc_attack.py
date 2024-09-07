@@ -68,7 +68,7 @@ class npc_attack(Settings):
                                "/home/ubuntu/gladiatus-bot/venv/bin/python3 /home/ubuntu/gladiatus-bot/src/npc_attack.py "
                                ">> /home/ubuntu/gladiatus-bot/logs/npc.log 2>&1")
                     job = cron.new(command)
-                    job.hour.every(4)
+                    job.hour.every(7)
                     cron.write()
                 return "You either have to wait or you don't have enough points"
             elif 'needLogin' in r.text:
