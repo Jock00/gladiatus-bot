@@ -8,7 +8,7 @@ from settings import Settings
 import json
 from package import Package
 class PlayerAttack(Settings):
-    min_health = 2500
+    min_health = 10
     
     def __init__(self):
         super().__init__()
@@ -53,16 +53,13 @@ class PlayerAttack(Settings):
             player_name = player_data.xpath('//*[contains(@class, "playername")]//text()')[0].strip()
             
             k = self.stats.get_better_player(player_data)
-
             if k > max_points[0]:
                 max_points = (k, link, player_name)
- 
         if max_points[0] == 0:
             return find_new_players()
 
         else:
             if self.stats.get_health() > self.min_health:
-
                 enemy_id = parse_qs(urlparse(max_points[1]).query)['p'][0]
                 server_id = max_points[1].split("-")[0].split("//s")[-1]
                 
@@ -87,7 +84,7 @@ class PlayerAttack(Settings):
                     txt += "Healed!"
                     self.stats.heal(x, y)
                 return txt
-              
+
         
 if __name__ == "__main__":
     player_attack = PlayerAttack()

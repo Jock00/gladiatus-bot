@@ -18,6 +18,7 @@ class Stats(Settings):
         self.profile_url = self.get_url + "?mod=overview&sh=" + self.sh
 
     def connect(self):
+
         r = requests.get(self.profile_url, cookies=self.cookies,
                          headers=self.headers)
         self.data = fromstring(r.text)
@@ -70,12 +71,12 @@ class Stats(Settings):
         return result
     
     def get_health(self):
-        print(self.data.text)
         health_data = self.data.xpath("//*[@id='header_values_hp_bar']/@data-tooltip")[0]
         health = int(health_data.split('"')[3].split()[0])
         return health
         
     def get_heal(self):
+
         health_data = self.data.xpath('//script[contains(text(),"JSON.parse(")]//text()')[-1]
         health_data = health_data.split("JSON.parse(")[-1][:-1]
         data = re.sub(r'\\\\\\"', '"',html.unescape(health_data))[1:].split(")\n")[0]

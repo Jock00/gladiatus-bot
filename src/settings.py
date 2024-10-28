@@ -1,34 +1,23 @@
 import configparser
-
-servers = {
-    "71": {
-        "code": "25388",
-        "lang": "en"},
-
-    "69": {
-        "code": "22253",
-        "lang": "en"},
-    "58":{
-        "code": "665757",
-        "lang": "en"
-    }
-}
+import json
 
 
 class Settings:
     server = None
+    player_name = None
     def __init__(self):
         config = configparser.ConfigParser()
         config.read('../config.ini')
-
-        self.server = self.server
+        with open("servers.json", "r") as f:
+            servers = json.loads(f.read())
         self.sh = config.get('PLAYERDATA', 'SH')
         world_code = config.get('PLAYERDATA', 'WorldCode')
         php_session = config.get('PLAYERDATA', 'PHPSession')
 
         self.cookies = {
             f"Gladiatus_{servers[self.server]['lang']}_{self.server}":
-                f"{servers[self.server]['code']}%" + world_code,
+                f"{servers[self.server]['player'][self.player_name]}%" +
+                world_code,
             "PHPSESSID": php_session,
         }
 

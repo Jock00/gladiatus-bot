@@ -8,24 +8,41 @@ from package import Package
 from auction import Auction
 from training import Training
 
-sh = "5e44af2dc71328a386351328a9b9a28d"
-php_session = "65lvqle0d50smdbgalb447epj0"
-url = "https://s69-en.gladiatus.gameforge.com/game/index.php?mod=highscore&sh=" + sh
-abilities = ['Strength', 'Dexterity', 'Agility', 'Constitution', 'Charisma', 'Intelligence']
+from settings import Settings
 
+if __name__ == "__main__":
 
-world_code = "3B015d535f6f00281f5e947b2e6c74e432"
-cookies = {
-    "Gladiatus_en_69": "22253%" + world_code,
-    "PHPSESSID": php_session,
-}
-print()
+    Settings.server = '71'
+    Settings.player_name = 'Dnme'
 
-train = Training(cookies, sh)
-# train.train(abilities[3])
-print(train.get_data())
-#auction = Auction(cookies, sh)
-#auction.buy_items()
+    # attack a player
+    """
+    player_attack = PlayerAttack()
+    result = player_attack.find_players()
+    print(result)
+    """
+
+    # expedition attack
+    """
+    location = 0
+    stage = 1
+    npc_attack = npc_attack()
+    result = npc_attack.attack_npcs(location, stage)
+    print(result)
+    """
+
+    # take packages and move them to inventory - does not work when its only
+    # one page
+    """
+    pkk = Package()
+
+    inventory_ids = ["1", "2"]
+
+    # pkk.get_new_goods()
+
+    pkk.store_materials()
+    pkk.fill_inventory(inventory_ids)
+    """
 
 """ - > seems to work but idk why last column and last line not working
 package = Package(cookies, sh)

@@ -52,9 +52,11 @@ class Package(Settings):
 
         data["page"] = str(page)
         self.package_url = urlunparse(urlparse(self.package_url)._replace(query=urlencode(data)))
+
         if inventory_id == '3':
             self.package_url += '&f=7'
-        req = requests.get(self.package_url, cookies=self.cookies)
+        req = requests.get(self.package_url, cookies=self.cookies,
+                           headers=self.headers)
         data = fromstring(req.text)
         try:
             last_page = data.xpath("//*[@class='paging']//a/text()")[-1]
@@ -265,6 +267,7 @@ class Package(Settings):
     def move_items_to_inventory(self, inventory_id='513', package_page=1):
         # moves items from packages to inventory
         data = self.get_package_page(inventory_id, package_page)
+
         if data is None:
             return -1
         inventory = self.get_inventory(inventory_id)
@@ -372,6 +375,7 @@ class Package(Settings):
             while True:
                 inventory = self.get_inventory(inventory_id)
                 res = self.move_items_to_inventory(inventory_id, page)
+                print(res)
                 if res < 0:
                     break
                 if self.check_matrix_has_space(inventory):
