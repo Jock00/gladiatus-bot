@@ -2,7 +2,7 @@ import configparser
 
 servers = {
     "71": {
-        "code": "25377",
+        "code": "25388",
         "lang": "en"},
 
     "69": {
