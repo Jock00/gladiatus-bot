@@ -1,0 +1,1068 @@
+{
+    "level 16-20": {
+        "of Pain": "(16)"
+    },
+    "of fear": {
+        "Agility": "-2%",
+        "Constitution": "+2"
+    },
+    "of grace": {
+        "Dexterity": "+5",
+        "Charisma": "+10%"
+    },
+    "of stars": {
+        "Damage": "+1",
+        "Charisma": "+2%"
+    },
+    "of brightness": {
+        "Charisma": "+10 +10%"
+    },
+    "of liturgy": {
+        "Healing": "+16"
+    },
+    "of skill": {
+        "Dexterity": "+2%",
+        "Agility": "+2"
+    },
+    "of looseness": {
+        "Strength": "+6%"
+    },
+    "of glory": {
+        "Damage": "+1",
+        "Strength": "+2"
+    },
+    "of readiness": {
+        "Health": "+20",
+        "Agility": "+5%"
+    },
+    "of inquisitiveness": {
+        "Healing": "+20",
+        "Critical healing value": "+3"
+    },
+    "of the clouds": {
+        "Health": "+5",
+        "Dexterity": "+2"
+    },
+    "of eradication": {
+        "Agility": "+7%",
+        "Critical attack value": "+3"
+    },
+    "of wounds": {
+        "Healing": "+24",
+        "Critical healing value": "+4"
+    },
+    "of normality": {
+        "Health": "+15"
+    },
+    "of the hills": {
+        "Constitution": "+4",
+        "Charisma": "+2"
+    },
+    "of the sea": {
+        "Health": "+10",
+        "Dexterity": "+4",
+        "Agility": "+2"
+    },
+    "of willpower": {
+        "Armour": "+57",
+        "Block value": "+4",
+        "Threat": "+8"
+    },
+    "of rapidity": {
+        "Agility": "+10 +10%"
+    },
+    "of reprisal": {
+        "Strength": "+9%"
+    },
+    "of blood": {
+        "Health": "+10",
+        "Agility": "+2"
+    },
+    "of invisibility": {
+        "Health": "+27",
+        "hardening value": "+4"
+    },
+    "of holiness": {
+        "Intelligence": "+11%",
+        "Critical healing value": "+4"
+    },
+    "of decapitation": {
+        "Dexterity": "+1",
+        "Charisma": "+10%",
+        "Critical attack value": "+4"
+    },
+    "of triumph": {
+        "Armour": "+66"
+    },
+    "of the rain": {
+        "Health": "+8",
+        "Agility": "+2"
+    },
+    "of consecration": {
+        "Intelligence": "+2",
+        "Healing": "+24",
+        "Critical healing value": "+6"
+    },
+    "of malediction": {
+        "Constitution+": "5%",
+        "Charisma": "+2%"
+    },
+    "of the woods": {
+        "Damage": "+1",
+        "Dexterity": "+3",
+        "Agility": "+1"
+    },
+    "of the mountains": {
+        "Strength": "+2",
+        "Constitution": "+2"
+    },
+    "of capriciousness": {
+        "Strength": "+8%",
+        "Charisma": "+10%"
+    },
+    "of balance": {
+        "Strength": "+2",
+        "Dexterity": "+2",
+        "Agility": "+2",
+        "Constitution": "+2",
+        "Charisma": "+2"
+    },
+    "of inevitability": {
+        "Armour": "+93",
+        "Strength": "+11%"
+    },
+    "of success": {
+        "Damage": "+2",
+        "Strength": "+2"
+    },
+    "of madness": {
+        "Health": "+20?",
+        "Dexterity": "+2",
+        "Agility": "+3"
+    },
+    "of spirituality": {
+        "Constitution": "-13%",
+        "Healing": "+32",
+        "Critical healing value": "+6"
+    },
+    "of melting": {
+        "Strength": "+1",
+        "Dexterity": "-2",
+        "": "Agility+1",
+        "Charisma": "+8%"
+    },
+    "of\u00a0vigour": {
+        "Strength": "+10%"
+    },
+    "of\u00a0conflict": {
+        "Damage": "+2",
+        "Dexterity": "+10",
+        "Agility": "+2%"
+    },
+    "of magic": {
+        "Dexterity": "+10",
+        "Charisma": "+10%"
+    },
+    "of\u00a0honour": {
+        "Constitution": "+1%",
+        "Charisma": "+5 +15%"
+    },
+    "of learning": {
+        "Damage": "+1",
+        "Armour": "+40",
+        "Constitution": "+4",
+        "Charisma": "+2"
+    },
+    "of\u00a0magnitude": {
+        "Charisma": "+5%"
+    },
+    "of\u00a0mourning": {
+        "Health": "+100",
+        "Constitution": "-4"
+    },
+    "of hesitation": {
+        "Armour": "+35",
+        "Agility": "+2",
+        "Charisma": "+2"
+    },
+    "of insult": {
+        "Damage": "+1",
+        "Health": "+20",
+        "Dexterity": "+2%",
+        "Charisma": "-2"
+    },
+    "of pride": {
+        "Strength": "-5%",
+        "Constitution": "+5%",
+        "Charisma": "+5%"
+    },
+    "of confusion": {
+        "Damage": "-1",
+        "": "Armour+100",
+        "Dexterity": "-2",
+        "Constitution": "-1%"
+    },
+    "of hindrance": {
+        "Armour": "+20",
+        "Dexterity": "-2",
+        "Agility": "-2"
+    },
+    "of satisfaction": {
+        "Damage": "+2",
+        "Health": "+20"
+    },
+    "of pain": {
+        "Damage": "+1",
+        "Strength": "+5",
+        "Agility": "+20%"
+    },
+    "of\u00a0generosity": {
+        "Strength": "+5",
+        "Constitution": "+5%",
+        "Charisma": "+5%"
+    },
+    "of\u00a0emasculation": {
+        "Intelligence": "+15%"
+    },
+    "of martial arts": {
+        "Strength": "+1",
+        "Charisma": "+2 +10%",
+        "Critical attack value": "+7"
+    },
+    "of reversion": {
+        "Armour": "+80",
+        "hardening value": "+4"
+    },
+    "of ordinance": {
+        "Intelligence": "+11%",
+        "Healing": "+32"
+    },
+    "of warning": {
+        "Damage": "+1",
+        "Armour": "+25",
+        "Dexterity": "+4"
+    },
+    "of self-assurance": {
+        "Strength": "+2 +13%"
+    },
+    "of\u00a0desperation": {
+        "Constitution": "+4",
+        "Charisma": "+2"
+    },
+    "of demolition": {
+        "Charisma": "+2 +11%",
+        "Intelligence": "-1%",
+        "Critical attack value": "+5"
+    },
+    "of fairness": {
+        "Constitution": "+5",
+        "Charisma": "+15%"
+    },
+    "of the blessed": {
+        "Damage": "-1",
+        "Intelligence": "+1",
+        "Healing": "+28",
+        "Critical healing value": "+5"
+    },
+    "of destruction": {
+        "Damage": "-1",
+        "Intelligence": "+1",
+        "Healing": "+28",
+        "Critical healing value": "+5"
+    },
+    "of distraction": {
+        "Dexterity": "+3 +10%",
+        "Agility": "+10%"
+    },
+    "of meat": {
+        "Strength": "+2",
+        "Constitution": "-2",
+        "Charisma": "+12%",
+        "Critical attack value": "+5"
+    },
+    "of the moon": {
+        "Health": "+10",
+        "Strength": "+4",
+        "Agility": "+2%"
+    },
+    "of attrition": {
+        "Strength": "+17%",
+        "Charisma": "-2"
+    },
+    "of belief": {
+        "Armour": "+100",
+        "Health": "+100",
+        "Charisma": "+20%"
+    },
+    "of repentance": {
+        "Strength": "+17%",
+        "Charisma": "-2"
+    },
+    "of haughtiness": {
+        "Damage": "-2",
+        "Strength": "-1%",
+        "Charisma": "+15%"
+    },
+    "of brutality": {
+        "Damage": "+3",
+        "Strength": "+6"
+    },
+    "of haste": {
+        "Dexterity": "+2%",
+        "Agility": "+10%"
+    },
+    "of nostalgia": {
+        "Strength": "+16%",
+        "Agility": "+13%"
+    },
+    "of chakra": {
+        "Strength": "+14%",
+        "Charisma": "+13%"
+    },
+    "of ceremony": {
+        "Intelligence": "+2 +11%",
+        "Healing": "+36"
+    },
+    "of religiousness": {
+        "Intelligence": "+1 +13%",
+        "Healing": "+44",
+        "Critical healing value": "+6"
+    },
+    "of assassination": {
+        "Damage": "+4",
+        "Dexterity": "+4 +2%",
+        "Agility": "+4%"
+    },
+    "of courage": {
+        "Health": "+50",
+        "Charisma": "+5 +20%"
+    },
+    "of cleverness": {
+        "Intelligence": "+12%",
+        "Healing": "+36"
+    },
+    "of harmony": {
+        "Constitution": "+20%",
+        "Charisma": "+20%"
+    },
+    "of the moment": {
+        "Armour": "+115"
+    },
+    "of power": {
+        "Armour": "+10",
+        "Strength": "+10 +5%"
+    },
+    "of health": {
+        "Armour": "+10",
+        "Health": "+30",
+        "Constitution": "+2%"
+    },
+    "of endurance": {
+        "Armour": "+30",
+        "Strength": "+3%",
+        "Constitution": "+15%"
+    },
+    "of favour": {
+        "Armour": "+100",
+        "Health": "+20",
+        "Constitution": "+5",
+        "Charisma": "+2%"
+    },
+    "of terror": {
+        "Armour": "+100",
+        "Strength": "+10",
+        "Constitution": "+5"
+    },
+    "of peace": {
+        "Constitution": "+10%"
+    },
+    "of battle": {
+        "Strength": "+4 +5%"
+    },
+    "of magnificence": {
+        "Armour": "+60",
+        "Health": "+20",
+        "Charisma": "+4 +2%"
+    },
+    "of illusion": {
+        "Health": "+100",
+        "Dexterity": "+2%",
+        "Agility": "+4",
+        "Charisma": "+4"
+    },
+    "of independence": {
+        "Armour": "+100",
+        "Health": "+40",
+        "Dexterity": "+2",
+        "Agility": "+2",
+        "Constitution": "+3"
+    },
+    "of poison": {
+        "Damage": "+3",
+        "Health": "+30",
+        "Strength": "+2",
+        "Dexterity": "+2"
+    },
+    "of return": {
+        "Health": "+200",
+        "Constitution": "+5"
+    },
+    "of retreat": {
+        "Armour": "+200",
+        "Agility": "+2"
+    },
+    "of perdition": {
+        "Agility": "+18%"
+    },
+    "of violence": {
+        "Armour": "+40",
+        "Strength": "+5 +2%"
+    },
+    "of silence": {
+        "Dexterity": "+20%"
+    },
+    "of diligence": {
+        "Health": "+20",
+        "Charisma": "+20%"
+    },
+    "of apprenticeship": {
+        "Damage": "+3",
+        "Strength": "+2",
+        "Dexterity": "+2"
+    },
+    "of revenge": {
+        "Strength": "+10"
+    },
+    "of mystery": {
+        "Damage": "+1",
+        "Strength": "+4"
+    },
+    "of evasion": {
+        "Health": "+46",
+        "Block value": "+8",
+        "": "Threat+18"
+    },
+    "of masculinity": {
+        "Strength": "+15%",
+        "Dexterity": "+3",
+        "Constitution": "-3",
+        "Charisma": "+2"
+    },
+    "of delicacy": {
+        "Strength": "+4%",
+        "Dexterity": "+20%",
+        "Agility": "+20%",
+        "Constitution": "+20%"
+    },
+    "of security": {
+        "Armour": "+100",
+        "Health": "+50"
+    },
+    "of sacrament": {
+        "Damage": "-2",
+        "Intelligence": "+2",
+        "Healing": "+44",
+        "Critical healing value": "+6"
+    },
+    "of boost": {
+        "Damage": "+1",
+        "Armour": "+40",
+        "Strength": "+4"
+    },
+    "of division": {
+        "Strength": "+19%",
+        "Agility": "+2",
+        "Intelligence": "-2"
+    },
+    "of the sun": {
+        "Health": "+100",
+        "Charisma": "+20%"
+    },
+    "of the victim": {
+        "Damage": "-1",
+        "Constitution": "+5%",
+        "Charisma": "+5"
+    },
+    "of light": {
+        "Charisma": "+20%"
+    },
+    "of separation": {
+        "Strength": "+19%",
+        "Agility": "-2",
+        "Intelligence": "-2"
+    },
+    "of pandemic": {
+        "Agility": "-16%",
+        "Intelligence": "+3 +13%",
+        "Critical healing value": "+9"
+    },
+    "of the parade": {
+        "Health": "+55",
+        "Strength": "+2",
+        "Block value": "+7",
+        "Threat": "+24"
+    },
+    "of\u00a0ghostly lightning*": {
+        "Intelligence": "+15",
+        "Healing": "+48"
+    },
+    "of tightrope walk": {
+        "Armour": "+130",
+        "Strength": "+18%"
+    },
+    "of the cursed": {
+        "Armour": "+100",
+        "Constitution": "+2%",
+        "Charisma": "-1%"
+    },
+    "of merit": {
+        "Strength": "+3",
+        "Charisma": "+2 +19%",
+        "Intelligence": "-2%"
+    },
+    "of self-discipline": {
+        "Armour": "+132",
+        "hardening value": "+8"
+    },
+    "of inspiration": {
+        "Intelligence": "+15%",
+        "Healing": "+48"
+    },
+    "of corniness": {
+        "Armour": "+125"
+    },
+    "of fragmentation": {
+        "Strength": "+2",
+        "Constitution": "-14%",
+        "Charisma": "+3 +17%",
+        "Critical attack value": "+11"
+    },
+    "of virtuousness": {
+        "Intelligence": "+18%",
+        "Healing": "+44"
+    },
+    "of purity": {
+        "Charisma": "-21%",
+        "Intelligence": "+2 +16%",
+        "Healing": "+40"
+    },
+    "of protection": {
+        "Armour": "+150",
+        "Constitution": "+2%"
+    },
+    "of the undead": {
+        "Dexterity": "+2%",
+        "Agility": "+2%",
+        "Charisma": "-2%"
+    },
+    "of corrosion": {
+        "Strength": "+3",
+        "Agility": "+22%",
+        "Constitution": "-3"
+    },
+    "of passion": {
+        "Damage": "+1",
+        "Armour": "+50",
+        "Dexterity": "+5"
+    },
+    "of spiritual superiority": {
+        "Intelligence": "+3 +23%",
+        "Healing": "+56"
+    },
+    "of hate": {
+        "Damage": "+2",
+        "Strength": "+2"
+    },
+    "of life": {
+        "Constitution": "+10%"
+    },
+    "of riot": {
+        "Damage": "+2",
+        "Armour": "+100",
+        "Health": "+100",
+        "Constitution": "+5",
+        "Charisma": "+2"
+    },
+    "of ignorance": {
+        "Armour": "+125",
+        "hardening value": "+8"
+    },
+    "of suffering": {
+        "Agility": "+21%",
+        "Charisma": "+17%"
+    },
+    "of restitution": {
+        "Intelligence": "+17%",
+        "Healing": "+56"
+    },
+    "of marriage": {
+        "Health": "+71",
+        "Strength": "+3"
+    },
+    "of concentration": {
+        "Constitution": "-4",
+        "Intelligence": "+19%",
+        "Healing": "+52"
+    },
+    "of sacrifice": {
+        "Armour": "+124"
+    },
+    "of baptism": {
+        "Intelligence": "+16%",
+        "Healing": "+40",
+        "Critical healing value": "+11"
+    },
+    "of spreader": {
+        "Strength": "+19%",
+        "Agility": "+4",
+        "Charisma": "+18%"
+    },
+    "of purposefulness": {
+        "Health": "+86",
+        "Strength": "+20%"
+    },
+    "of the amazons": {
+        "Strength": "+2 +26%",
+        "Charisma": "+16%"
+    },
+    "of homunculus": {
+        "Armour": "+164",
+        "Strength": "+2"
+    },
+    "of expansion": {
+        "Strength": "+2 +25%",
+        "Agility": "+3",
+        "Intelligence": "-2%"
+    },
+    "of knowledge": {
+        "Intelligence": "+18%",
+        "Healing": "+52"
+    },
+    "of antiquity": {
+        "Strength": "+27%",
+        "Dexterity": "+4",
+        "Charisma": "+3"
+    },
+    "of denomination": {
+        "Strength": "-27%",
+        "Intelligence": "+3 +23%",
+        "Critical healing value": "+12"
+    },
+    "of mercy": {
+        "Strength": "+2 +18%",
+        "Intelligence": "-3%"
+    },
+    "of calling": {
+        "": "Strength+3",
+        "Strength": "+23%",
+        "Intelligence": "-3%"
+    },
+    "of rigor mortis": {
+        "Intelligence": "+3 +19%",
+        "Healing": "+13"
+    },
+    "of prevention": {
+        "Strength": "+27%",
+        "Block value": "+12",
+        "Threat": "+30"
+    },
+    "of mars": {
+        "Strength": "+23%",
+        "Dexterity": "+28%"
+    },
+    "of duplicity": {
+        "Damage": "-4",
+        "Intelligence": "+3",
+        "Healing": "+68"
+    },
+    "of hypocrisy": {
+        "Strength": "+27%",
+        "Block value": "+12",
+        "Threat": "+30"
+    },
+    "of orion": {
+        "Health": "+96"
+    },
+    "of malice": {
+        "Damage": "+4",
+        "Strength": "+15%"
+    },
+    "of stamina": {
+        "Health": "+83"
+    },
+    "of alleluia": {
+        "Intelligence": "+30%",
+        "Healing": "+48",
+        "Critical healing value": "+12"
+    },
+    "of elimination": {
+        "Strength": "+24%",
+        "Dexterity": "+28%",
+        "Charisma": "+4",
+        "Critical attack value": "+10"
+    },
+    "of accuracy": {
+        "Armour": "+206"
+    },
+    "of aggression": {
+        "Strength": "+3",
+        "Dexterity": "+3 +29%",
+        "Intelligence": "-3%",
+        "Critical attack value": "+12"
+    },
+    "of recovery": {
+        "Intelligence": "+24%",
+        "Healing": "+72"
+    },
+    "of regeneration": {
+        "Strength": "-4",
+        "Intelligence": "+3",
+        "Healing": "+56",
+        "Critical healing value": "+9"
+    },
+    "of heaven": {
+        "Armour": "+300",
+        "Health": "+100",
+        "Constitution": "+5%",
+        "Charisma": "+20%"
+    },
+    "of considerateness": {
+        "Intelligence": "+3 +21%",
+        "Healing": "+80"
+    },
+    "of pressure": {
+        "Strength": "+31%",
+        "Agility": "+4",
+        "Charisma": "+20%"
+    },
+    "of death": {
+        "Strength": "+4",
+        "Charisma": "+5 +28%",
+        "Intelligence": "-3%",
+        "Critical attack value": "+16"
+    },
+    "of fatuity": {
+        "Intelligence": "+3 +31%",
+        "Critical healing value": "+14"
+    },
+    "of sickness": {
+        "Armour": "+203",
+        "Strength": "+3 +32%"
+    },
+    "of the safe parade": {
+        "Strength": "+26%",
+        "Block": "+13",
+        "hardening value": "+14",
+        "Threat": "+38"
+    },
+    "of the flesh wound": {
+        "Strength": "+3",
+        "Agility": "+4 +30%",
+        "Intelligence": "-3"
+    },
+    "of benevolence": {
+        "Charisma": "-4",
+        "Intelligence": "+5",
+        "Healing": "+72"
+    },
+    "of total defence": {
+        "Strength": "+4",
+        "Intelligence": "-3%",
+        "Block value": "+11",
+        "hardening value": "+13",
+        "Threat": "+40"
+    },
+    "of freedom": {
+        "Strength": "+5 +26%",
+        "Agility": "+3",
+        "Charisma": "+28%"
+    },
+    "of ingenuity": {
+        "Intelligence": "+5 +32%",
+        "Healing": "+76"
+    },
+    "of blocking": {
+        "Health": "+80",
+        "Strength": "+4",
+        "Block value": "+17",
+        "Threat": "+44"
+    },
+    "of the critical strike": {
+        "Strength": "+4",
+        "Charisma": "+5 +28%",
+        "Intelligence": "-3%",
+        "Critical attack value": "+14"
+    },
+    "of retribution": {
+        "Damage": "+6",
+        "Strength": "+10",
+        "Dexterity": "+5"
+    },
+    "of hell": {
+        "Damage": "+5",
+        "Armour": "+200",
+        "Strength": "+2%",
+        "Constitution": "+15%"
+    },
+    "of fire": {
+        "Damage": "+3",
+        "Dexterity": "+9",
+        "Agility": "+9",
+        "Charisma": "+12",
+        "Critical attack value": "+18"
+    },
+    "of insanity": {
+        "Agility": "+8",
+        "Intelligence": "+17",
+        "Healing": "+85",
+        "Critical healing": "value+18"
+    },
+    "of dominance": {
+        "Damage": "+4",
+        "Health": "+250",
+        "Strength": "+15",
+        "Charisma": "+10",
+        "Critical attack value": "+10",
+        "Block value": "+20",
+        "Threat": "+15"
+    },
+    "of ease": {
+        "Damage": "+2",
+        "Armour": "+200",
+        "Dexterity": "+20",
+        "Agility": "+20"
+    },
+    "of triviality": {
+        "Strength": "+15",
+        "Dexterity": "+15",
+        "Agility": "+15",
+        "Intelligence": "+15"
+    },
+    "of hope": {
+        "Damage": "+6",
+        "Charisma": "+13",
+        "Intelligence": "+13"
+    },
+    "of the curse": {
+        "Damage": "+4",
+        "Armour": "+250",
+        "Strength": "+5",
+        "Charisma": "+15",
+        "Intelligence": "+10"
+    },
+    "of strength": {
+        "Health": "+300",
+        "Strength": "+25",
+        "Critical attack value": "+20"
+    },
+    "of promise": {
+        "Damage": "+2",
+        "Armour": "+200",
+        "Dexterity": "+5",
+        "Agility": "+5",
+        "Constitution": "+10",
+        "Charisma": "+5",
+        "Block value": "+25"
+    },
+    "of earth": {
+        "Damage": "+5",
+        "Armour": "+300",
+        "Strength": "+15",
+        "Constitution": "+8",
+        "Block value": "+30",
+        "Threat": "+50"
+    },
+    "of truth": {
+        "Agility": "+8",
+        "Intelligence": "+23",
+        "Healing": "+90",
+        "Critical healing value": "+15"
+    },
+    "of rivalry": {
+        "Damage": "+3",
+        "Armour": "+200",
+        "Constitution": "+5",
+        "Charisma": "+15"
+    },
+    "of love": {
+        "Intelligence": "+20",
+        "Healing": "+100",
+        "Critical healing value": "+25"
+    },
+    "of the dragon": {
+        "Damage": "+7",
+        "Dexterity": "+15",
+        "Agility": "+15",
+        "Charisma": "+5"
+    },
+    "of the elysian fields": {
+        "Armour": "+400",
+        "Health": "-306",
+        "Agility": "+8",
+        "Charisma": "-24"
+    },
+    "of cold": {
+        "Health": "+411",
+        "Strength": "+21",
+        "Healing": "+115",
+        "Critical healing value": "+35"
+    },
+    "of despair": {
+        "Strength": "+35%",
+        "Dexterity": "+37 +22%",
+        "Charisma": "+22",
+        "Threat": "+17"
+    },
+    "of gloom": {
+        "Damage": "+7",
+        "Armour": "+368",
+        "Strength": "+10 +25%",
+        "Dexterity": "+17%",
+        "Agility": "+35%",
+        "Intelligence": "-15%"
+    },
+    "of heat": {
+        "Health +1": "?",
+        "Strength": "-22%",
+        "Charisma": "+18",
+        "Healing": "+141"
+    },
+    "of night": {
+        "Strength": "+23",
+        "Critical attack value": "+13"
+    },
+    "of the spirit": {
+        "Agility": "+8",
+        "Charisma": "+14%",
+        "Threat": "+15"
+    },
+    "of the\u00a0behemoth": {
+        "Health": "+413",
+        "Strength": "+33%",
+        "Constitution": "+8",
+        "Threat": "+28"
+    },
+    "of judgement": {
+        "Strength": "+10",
+        "Dexterity": "+15 +35%",
+        "Constitution": "-15",
+        "Charisma": "+18 +15%",
+        "Healing": "+133"
+    },
+    "of solitude": {
+        "Armour": "+400",
+        "Intelligence": "+40%",
+        "Healing": "+105"
+    },
+    "of shadows": {
+        "Damage": "+4",
+        "Armour": "+345",
+        "Intelligence": "+24%"
+    },
+    "of acheron": {
+        "Strength": "+22",
+        "Agility": "+31%/37%??",
+        "Constitution": "-11 +6%",
+        "Intelligence": "+25"
+    },
+    "of\u00a0the unknown": {
+        "Damage": "+5",
+        "Health": "+349",
+        "Intelligence": "+31%"
+    },
+    "of\u00a0demons": {
+        "Health": "+347",
+        "Strength": "+18",
+        "Agility": "+23%",
+        "Charisma": "+25"
+    },
+    "of transition": {
+        "Armor": "+354",
+        "critical healing value": "+35"
+    },
+    "of the inferno": {
+        "Damage": "+8",
+        "Armour": "+382",
+        "Strength": "+11 +24%",
+        "Intelligence": "+22 +20%",
+        "Healing": "+140"
+    },
+    "of the snake": {
+        "Strength": "+35%",
+        "Constitution": "-13 +5%",
+        "Charisma": "+25",
+        "Intelligence": "-40%"
+    },
+    "of torment": {
+        "Damage": "+7",
+        "Intelligence": "+24%"
+    },
+    "of the dream": {
+        "Dexterity": "+23",
+        "Agility": "+8",
+        "Charisma": "+18 +21%"
+    },
+    "of\u00a0bondage": {
+        "Damage": "-8",
+        "Armour": "+348",
+        "Strength": "+31 -10%",
+        "Charisma": "+35%"
+    },
+    "of torsion": {
+        "Health": "+460",
+        "Strength": "+29%",
+        "Charisma": "+17 +15%"
+    },
+    "of\u00a0agony": {
+        "Dexterity": "+23",
+        "Healing": "+112",
+        "Critical attack value": "+17"
+    },
+    "of anguish": {
+        "Health": "+422",
+        "Strength": "+29%",
+        "Agility": "+22",
+        "Healing": "+141"
+    },
+    "of languor": {
+        "Damage": "+5",
+        "Constitution": "+6",
+        "Charisma": "+35%",
+        "Intelligence": "+28%"
+    },
+    "of the plague": {
+        "Health": "+419",
+        "Agility": "+5%",
+        "Charisma": "+25",
+        "Threat": "+37"
+    },
+    "of torture": {
+        "Armour": "+304",
+        "Charisma": "+32%",
+        "Threat": "+32"
+    },
+    "of hellfire": {
+        "Constitution": "-12"
+    },
+    "of wings": {
+        "Armour": "+324",
+        "Charisma": "+12%",
+        "Critical attack value": "+24"
+    },
+    "of faith": {
+        "Constitution": "-18%",
+        "Charisma": "-5%",
+        "Block value": "+38"
+    },
+    "of the druid": {
+        "Armour": "+398",
+        "Charisma": "+24",
+        "Intelligence": "-12 -15%",
+        "Critical attack value": "+15"
+    },
+    "of the chasm": {
+        "Health": "+406",
+        "Charisma": "+20%",
+        "Intelligence": "-18"
+    }
+}

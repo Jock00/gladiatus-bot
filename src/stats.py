@@ -10,20 +10,16 @@ from bs4 import BeautifulSoup
 
 
 class Stats(Settings):
-    profile_url = "https://s69-en.gladiatus.gameforge.com/game/index.php?mod=overview&sh="
-    inventory_link = "https://s69-en.gladiatus.gameforge.com/game/ajax.php?mod=inventory&submod=setInv&inv={}&sh="
     health_bonus_map = []
     data = None
     trashhold = 200
-    base_post_link = "https://s69-en.gladiatus.gameforge.com/game/ajax.php"
     def __init__(self):
         super().__init__()
-        self.profile_url += self.sh
-        self.inventory_link = self.inventory_link + self.sh
-    
+        self.profile_url = self.get_url + "?mod=overview&sh=" + self.sh
+
     def connect(self):
-        
-        r = requests.get(self.profile_url, cookies=self.cookies)
+        r = requests.get(self.profile_url, cookies=self.cookies,
+                         headers=self.headers)
         self.data = fromstring(r.text)
         return self.data
 
@@ -74,6 +70,7 @@ class Stats(Settings):
         return result
     
     def get_health(self):
+        print(self.data.text)
         health_data = self.data.xpath("//*[@id='header_values_hp_bar']/@data-tooltip")[0]
         health = int(health_data.split('"')[3].split()[0])
         return health
@@ -126,7 +123,7 @@ class Stats(Settings):
         'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',  
         }
         heal_req = requests.post(
-            self.base_post_link,
+            self.post_url,
             params=params,
             headers=headers,
             cookies=self.cookies,

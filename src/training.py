@@ -11,9 +11,9 @@ ABILITIES = {
     "Intelligence": '6',
     }
 class Training(Settings):
-    train_url = "https://s69-en.gladiatus.gameforge.com/game/index.php?mod=training&submod=train&skillToTrain={}&sh={}"
-    
+
     def __init__(self):
+        self.train_url = self.get_url + "?mod=training&submod=train&skillToTrain={}&sh={}"
         super().__init__()
         
     
@@ -25,7 +25,7 @@ class Training(Settings):
             print(f"Ability {ability} trained!")
        
     def get_data(self):
-        url = "https://s69-en.gladiatus.gameforge.com/game/index.php?mod=training&sh=" + self.sh
+        url = self.get_url + "?mod=training&sh=" + self.sh
         response = requests.get(url, cookies=self.cookies)
         data = fromstring(response.text)
         base_stats = data.xpath('//*[@class="training_value"][1]//text()')

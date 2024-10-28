@@ -51,36 +51,6 @@ class GladiatusDB:
         self.cursor.execute(f'SELECT * FROM {self.table} order by gold')
         return self.cursor.fetchall()
 
-    def update_user(self, user_id, name=None, age=None, email=None):
-        """Update user details in the users table."""
-        updates = []
-        params = []
-        if name is not None:
-            updates.append('name = ?')
-            params.append(name)
-        if age is not None:
-            updates.append('age = ?')
-            params.append(age)
-        if email is not None:
-            updates.append('email = ?')
-            params.append(email)
-
-        params.append(user_id)
-        update_str = ', '.join(updates)
-        self.cursor.execute(f'''
-        UPDATE users
-        SET {update_str}
-        WHERE id = ?
-        ''', tuple(params))
-        self.conn.commit()
-
-    def delete_user(self, user_id):
-        """Delete a user from the users table."""
-        self.cursor.execute(f'''
-        DELETE FROM {self.table}
-        WHERE id = ?
-        ''', (user_id,))
-        self.conn.commit()
 
     def close(self):
         """Close the database connection."""

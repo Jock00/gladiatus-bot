@@ -40,8 +40,10 @@ class Package(Settings):
     map_name = defaultdict(dict)
     def __init__(self):
         super().__init__()
-        self.package_url = "https://s69-en.gladiatus.gameforge.com/game/index.php?page=1&mod=packages&sh=" + self.sh
-        self.inventory_url = "https://s69-en.gladiatus.gameforge.com/game/ajax.php?mod=inventory&submod=setInv&sh=" + self.sh + "&inv="
+        self.package_url = self.get_url + "?page=1&mod=packages&sh=" + self.sh
+        self.inventory_url = self.post_url + \
+                              f"""?mod=inventory&submod=setInv&sh={self.sh} 
+                              +&inv="""
 
 
     def get_package_page(self, inventory_id, page=1):

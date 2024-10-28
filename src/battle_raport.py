@@ -7,10 +7,8 @@ import json
 import re
 from database import GladiatusDB
 
-# https://s69-en.gladiatus.gameforge.com/game/index.php?mod=reports&submod=showArena&sh=725aaf1f3c74f9e46d65444cfacfbee5
 
 class BattleReport(Settings):
-    report_url = "https://s69-en.gladiatus.gameforge.com/game/index.php?page=1&mod=reports&submod=showArena&sh="
 
     def __init__(self, hour=9):
         super().__init__()
@@ -21,7 +19,7 @@ class BattleReport(Settings):
         # Get "today at 9:00"
         self.today_9am = datetime.now().replace(hour=hour, minute=0, second=0, microsecond=0)
 
-        self.report_url += self.sh
+        self.report_url += self.get_url + "?page=1&mod=reports&submod=showArena&sh=" + self.sh
 
 
 
@@ -83,10 +81,13 @@ db = GladiatusDB("players")
 
 db.create_table()
 reps = d.get_highest_rewards()
+treshhold = 5000
 for i in reps:
+    if i["gold"] >= treshhold:
     # print(json.dumps(i, indent=4))
-    db.insert_player(i)
-# res = db.query_players()
-# for j in res:
-#     print(json.dumps(j, indent=4))
+        db.insert_player(i)
+res = db.query_players()
+for j in res:
+    print(json.dumps(j, indent=4))
+
 db.close()

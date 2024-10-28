@@ -8,15 +8,14 @@ from settings import Settings
 import json
 from package import Package
 class PlayerAttack(Settings):
-    
-    arena_url = "https://s69-en.gladiatus.gameforge.com/game/index.php?mod=arena&submod=serverArena&sh="
-    base_post_url = "https://s69-en.gladiatus.gameforge.com/game/ajax.php"
-    base_get_url = "https://s69-en.gladiatus.gameforge.com/game/index.php"
     min_health = 2500
     
     def __init__(self):
         super().__init__()
-        self.arena_url += self.sh
+        self.arena_url = self.get_url + "?mod=arena&submod=serverArena&sh=" \
+                           +self.sh
+        self.base_post_url = self.post_url
+        self.base_get_url = self.get_url
         self.stats = Stats()
         self.params = {
                 'mod': 'arena',
