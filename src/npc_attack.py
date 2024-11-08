@@ -83,7 +83,7 @@ class npc_attack(Settings):
 if __name__ == "__main__":
     location = 0
     stage = 1
-    Settings.server = '71'
-    Settings.player_name = 'Dnme'
+    Settings.server = '69'
+    Settings.player_name = 'MikeOxlong'
     npc_attack = npc_attack()
     print(npc_attack.attack_npcs(location, stage))

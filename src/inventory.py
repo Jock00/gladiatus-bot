@@ -48,3 +48,8 @@ class Inventory(Settings):
         if '"heal"' in req.text:
             return 1
         return 0
+
+if __name__ == "__main__":
+    Settings.server = '69'
+    Settings.player_name = 'MikeOxlong'
+    # inventory = Inventory()

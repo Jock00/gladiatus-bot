@@ -9,6 +9,7 @@ import time
 from settings import Settings
 from urllib.parse import urlparse, urlunparse, urlsplit, urlencode, parse_qs
 from collections import defaultdict
+from settings import Settings
 
 class Package(Settings):
     max_x = 8
@@ -371,11 +372,11 @@ class Package(Settings):
 
     def fill_inventory(self, inventory_ids_arg):
         for inventory_id in inventory_ids_arg:
-            page = 1
+            page = 250
             while True:
                 inventory = self.get_inventory(inventory_id)
                 res = self.move_items_to_inventory(inventory_id, page)
-                print(res)
+                print(f"page: {page}")
                 if res < 0:
                     break
                 if self.check_matrix_has_space(inventory):
@@ -402,6 +403,8 @@ class Package(Settings):
 
 
 if __name__ == "__main__":
+    Settings.server = '69'
+    Settings.player_name = 'MikeOxlong'
     pkk = Package()
 
     inventory_ids = ["1", "2"]
